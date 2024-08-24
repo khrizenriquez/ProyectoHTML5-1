@@ -4,14 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras :: Desarrollo Web</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/cart.css">
 </head>
 <body>
     <!--
+    Página 2
     Página donde se muestre el carrito de compras, lista de productos y el país donde realizara la compra (usando
     geolocalización).
     -->
+    <header>
+        <nav>
+            <a href="./index.html">Inicio</a>
+            <a href="./cart.html">Carrito</a>
+            <a href="./checkout.html">Checkout</a>
+        </nav>
+    </header>
 
-    <script src="./app.js" async></script>
+    <div class="main-content">
+        <section class="product-list">
+            <article class="product-item" draggable="true" ondragstart="drag(event)" data-product="ENGLISH HORSE - Q1500">
+                <img src="./img/englishrose.png" alt="Reloj ENGLISH HORSE">
+                <h2>ENGLISH HORSE</h2>
+                <p>Precio: Q1500</p>
+            </article>
+            <article class="product-item" draggable="true" ondragstart="drag(event)" data-product="BOX ENGASSE - Q2500">
+                <img src="./img/boxengasse.png" alt="Reloj BOX ENGASSE">
+                <h2>BOX ENGASSE</h2>
+                <p>Precio: Q2500</p>
+            </article>
+            <article class="product-item" draggable="true" ondragstart="drag(event)" data-product="KNOCK NAP - Q3500">
+                <img src="./img/knocknap.png" alt="Reloj KNOCK NAP">
+                <h2>KNOCK NAP</h2>
+                <p>Precio: Q3500</p>
+            </article>
+            <article class="product-item" draggable="true" ondragstart="drag(event)" data-product="LA NIGHT - Q3500">
+                <img src="./img/lanight.png" alt="Reloj LA NIGHT">
+                <h2>LA NIGHT</h2>
+                <p>Precio: Q3500</p>
+            </article>
+            <article class="product-item" draggable="true" ondragstart="drag(event)" data-product="SILVER ALL - Q3500">
+                <img src="./img/middlesteel.png" alt="Reloj SILVER ALL">
+                <h2>SILVER ALL</h2>
+                <p>Precio: Q3500</p>
+            </article>
+            <article class="product-item" draggable="true" ondragstart="drag(event)" data-product="SKIN GLAM - Q3500">
+                <img src="./img/midimix.png" alt="Reloj SKIN GLAM">
+                <h2>SKIN GLAM</h2>
+                <p>Precio: Q3500</p>
+            </article>
+            <article class="product-item" draggable="true" ondragstart="drag(event)" data-product="MIDIMIX - Q3500">
+                <img src="./img/silverall.png" alt="Reloj MIDIMIX">
+                <h2>MIDIMIX</h2>
+                <p>Precio: Q3500</p>
+            </article>
+            <article class="product-item" draggable="true" ondragstart="drag(event)" data-product="SIR BLUE - Q3500">
+                <img src="./img/sirblue.png" alt="Reloj SIR BLUE">
+                <h2>SIR BLUE</h2>
+                <p>Precio: Q3500</p>
+            </article>
+            <article class="product-item" draggable="true" ondragstart="drag(event)" data-product="MIDDLESTEEL - Q3500">
+                <img src="./img/skinglam.png" alt="Reloj MIDDLESTEEL">
+                <h2>MIDDLESTEEL</h2>
+                <p>Precio: Q3500</p>
+            </article>
+        </section>
+
+        <aside class="shopping-cart" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Carrito</h2>
+            <p id="cart-items">Arrastra los productos a esta sección</p>
+        </aside>
+    </div>
+
+    <script src="./js/app.js" async></script>
+    <script src="./js/cart.js"></script>
 </body>
 </html>
