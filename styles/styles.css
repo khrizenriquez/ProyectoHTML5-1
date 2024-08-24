@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: url(../img/watch_banner.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    margin-top: 0;
+    text-align: center;
+    padding-top: 2em;
+}
+header a {
+    background-color: #007bff;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 0.5em;
+    text-decoration: none;
+    border-radius: 1em;
+    transition: all 0.15s linear;
+    margin: auto 1em;
+}
+header a:hover {
+    background-color: #fff;
+    cursor: pointer;
+    color: #007bff;
+}
+@media (max-width: 460px) {
+    header a {
+        display: block;
+        font-size: 1.2em;
+        padding: 0.25em;
+        margin: 0.25em 0.25em;
+    }
+}
