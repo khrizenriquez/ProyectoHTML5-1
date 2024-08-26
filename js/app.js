@@ -1,3 +1,3 @@
 'use strict'
 
-console.log('app file loaded');
+console.log('app file loaded')

@@ -77,11 +77,11 @@ const updateCart = () => {
         
         productElement.innerHTML = `
             <img src="${item.image}" alt="${item.name}" class="cart-item-img" />
-            <p>${item.name} - Q${item.price}</p>
+            <p>${item.name} - Q${item.price} x ${item.quantity}</p>
         `
         cartContainer.appendChild(productElement)
 
-        total += item.price
+        total += item.price * item.quantity
     })
 
     const totalElement = document.createElement('p')
@@ -89,16 +89,30 @@ const updateCart = () => {
     cartContainer.appendChild(totalElement)
 }
 
-const addToCart = (product) => {
+const addToCart = (productName) => {
     let cartItems = JSON.parse(sessionStorage.getItem('cart')) || []
-    cartItems.push(product)
+    const existingProductIndex = cartItems.findIndex(item => item.name === productName)
+
+    if (existingProductIndex !== -1) {
+        cartItems[existingProductIndex].quantity += 1
+    } else {
+        const productElement = document.querySelector(`[data-product^="${productName}"]`)
+        const productData = {
+            name: productName,
+            price: parseFloat(productElement.dataset.product.split(' - ')[1].substring(1)),
+            image: productElement.querySelector('img').src,
+            quantity: 1
+        }
+        cartItems.push(productData)
+    }
+
     sessionStorage.setItem('cart', JSON.stringify(cartItems))
     updateCart()
 }
 
 const getTotal = () => {
     const cartItems = JSON.parse(sessionStorage.getItem('cart')) || []
-    return cartItems.reduce((total, item) => total + item.price, 0)
+    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0)
 }
 
 const allowDrop = (ev) => {
@@ -111,7 +125,7 @@ const drag = (ev) => {
         name: ev.currentTarget.dataset.product.split(' - ')[0],
         price: parseFloat(ev.currentTarget.dataset.product.split(' - ')[1].substring(1)),
         image: ev.currentTarget.querySelector('img').src
-    };
+    }
     ev.dataTransfer.setData("text", JSON.stringify(productData))
 }
 
@@ -119,7 +133,7 @@ const drop = (ev) => {
     ev.preventDefault()
     ev.currentTarget.classList.remove('drag-over')
     const data = JSON.parse(ev.dataTransfer.getData("text"))
-    addToCart(data)
+    addToCart(data.name)
 }
 
 document.addEventListener('DOMContentLoaded', getLocation)
