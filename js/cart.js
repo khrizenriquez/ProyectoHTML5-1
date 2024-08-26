@@ -65,59 +65,59 @@ const showError = (error) => {
 }
 
 const updateCart = () => {
-    const cartItems = JSON.parse(sessionStorage.getItem('cart')) || [];
-    const cartContainer = document.getElementById('cart-items');
-    cartContainer.innerHTML = '';
+    const cartItems = JSON.parse(sessionStorage.getItem('cart')) || []
+    const cartContainer = document.getElementById('cart-items')
+    cartContainer.innerHTML = ''
 
-    let total = 0;
+    let total = 0
 
     cartItems.forEach(item => {
-        const productElement = document.createElement('div');
-        productElement.classList.add('cart-item');
+        const productElement = document.createElement('div')
+        productElement.classList.add('cart-item')
         
         productElement.innerHTML = `
             <img src="${item.image}" alt="${item.name}" class="cart-item-img" />
             <p>${item.name} - Q${item.price} x ${item.quantity}</p>
-        `;
-        cartContainer.appendChild(productElement);
+        `
+        cartContainer.appendChild(productElement)
 
-        total += item.price * item.quantity;
-    });
+        total += item.price * item.quantity
+    })
 
-    const totalElement = document.createElement('p');
-    totalElement.innerHTML = `Total: Q${total}`;
-    cartContainer.appendChild(totalElement);
+    const totalElement = document.createElement('p')
+    totalElement.innerHTML = `Total: Q${total}`
+    cartContainer.appendChild(totalElement)
 }
 
 const addToCart = (productName) => {
-    let cartItems = JSON.parse(sessionStorage.getItem('cart')) || [];
-    const existingProductIndex = cartItems.findIndex(item => item.name === productName);
+    let cartItems = JSON.parse(sessionStorage.getItem('cart')) || []
+    const existingProductIndex = cartItems.findIndex(item => item.name === productName)
 
     if (existingProductIndex !== -1) {
-        cartItems[existingProductIndex].quantity += 1;
+        cartItems[existingProductIndex].quantity += 1
     } else {
-        const productElement = document.querySelector(`[data-product^="${productName}"]`);
+        const productElement = document.querySelector(`[data-product^="${productName}"]`)
         const productData = {
             name: productName,
             price: parseFloat(productElement.dataset.product.split(' - ')[1].substring(1)),
             image: productElement.querySelector('img').src,
             quantity: 1
-        };
-        cartItems.push(productData);
+        }
+        cartItems.push(productData)
     }
 
-    sessionStorage.setItem('cart', JSON.stringify(cartItems));
-    updateCart();
+    sessionStorage.setItem('cart', JSON.stringify(cartItems))
+    updateCart()
 }
 
 const getTotal = () => {
-    const cartItems = JSON.parse(sessionStorage.getItem('cart')) || [];
-    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+    const cartItems = JSON.parse(sessionStorage.getItem('cart')) || []
+    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0)
 }
 
 const allowDrop = (ev) => {
-    ev.preventDefault();
-    ev.currentTarget.classList.add('drag-over');
+    ev.preventDefault()
+    ev.currentTarget.classList.add('drag-over')
 }
 
 const drag = (ev) => {
@@ -125,15 +125,15 @@ const drag = (ev) => {
         name: ev.currentTarget.dataset.product.split(' - ')[0],
         price: parseFloat(ev.currentTarget.dataset.product.split(' - ')[1].substring(1)),
         image: ev.currentTarget.querySelector('img').src
-    };
-    ev.dataTransfer.setData("text", JSON.stringify(productData));
+    }
+    ev.dataTransfer.setData("text", JSON.stringify(productData))
 }
 
 const drop = (ev) => {
-    ev.preventDefault();
-    ev.currentTarget.classList.remove('drag-over');
-    const data = JSON.parse(ev.dataTransfer.getData("text"));
-    addToCart(data.name);
+    ev.preventDefault()
+    ev.currentTarget.classList.remove('drag-over')
+    const data = JSON.parse(ev.dataTransfer.getData("text"))
+    addToCart(data.name)
 }
 
 document.addEventListener('DOMContentLoaded', getLocation)
