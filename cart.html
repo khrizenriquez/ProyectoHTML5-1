@@ -6,12 +6,13 @@
     <title>Carrito de Compras :: Desarrollo Web</title>
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="./styles/cart.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <!--
     Página 2
-    Página donde se muestre el carrito de compras, lista de productos y el país donde realizara la compra (usando
-    geolocalización).
+    Página donde se muestre el carrito de compras, lista de productos y el país donde realizara la compra (usando geolocalización).
     -->
     <header>
         <nav>
@@ -20,6 +21,13 @@
             <a href="./checkout.html">Checkout</a>
         </nav>
     </header>
+
+    <div id="country-flag">Habilita compartir tu ubicación en las opciones de tu navegador</div>
+
+    <aside class="shopping-cart" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h2><i class="fas fa-shopping-cart"></i> Carrito</h2>
+        <p id="cart-items">Arrastra los productos a esta sección</p>
+    </aside>
 
     <div class="main-content">
         <section class="product-list">
@@ -69,13 +77,9 @@
                 <p>Precio: Q3500</p>
             </article>
         </section>
-
-        <aside class="shopping-cart" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <h2>Carrito</h2>
-            <p id="cart-items">Arrastra los productos a esta sección</p>
-        </aside>
     </div>
 
+    <script src="./config.js"></script>
     <script src="./js/app.js" async></script>
     <script src="./js/cart.js"></script>
 </body>
