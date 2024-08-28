@@ -1,12 +1,13 @@
 .main-content {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     width: 100%;
     padding: 20px;
 }
 .product-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
     gap: 1rem;
     flex: 3; 
 }
@@ -49,6 +50,7 @@
     position: fixed;
     right: 0;
     top: 10%;
+    overflow-y: auto; /* Añadir esta línea */
 }
 
 #country-flag {
@@ -65,6 +67,7 @@
     }
 
     .shopping-cart {
+        width: 250px; /* Ajustar el ancho para pantallas medianas */
         max-width: 100%;
     }
 }
@@ -75,7 +78,7 @@
     }
 
     .shopping-cart {
-        max-width: 100%;
+        width: 100%; /* Ajustar el ancho para pantallas pequeñas */
         margin-top: 20px;
         order: -1;
     }

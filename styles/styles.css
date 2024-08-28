@@ -30,7 +30,7 @@ header a:hover {
     cursor: pointer;
     color: #007bff;
 }
-@media (max-width: 460px) {
+@media (max-width: 768px) {
     header a {
         display: block;
         font-size: 1.2em;
