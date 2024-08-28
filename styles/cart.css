@@ -76,10 +76,24 @@
     .product-item {
         flex: 1 1 100%;
     }
-
+    .product-item img {
+        width: 60%;
+    }
     .shopping-cart {
         width: 100%; /* Ajustar el ancho para pantallas pequeñas */
-        margin-top: 20px;
+        margin-top: 50px;
         order: -1;
+        height: 200px;
+    }
+    .main-content {
+        padding: 0px;
+    }
+    .product-list {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 1em;
+    }
+    #country-flag {
+        padding: 20px 0px;
+        margin-top: 200px;
     }
 }

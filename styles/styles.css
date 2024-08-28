@@ -38,3 +38,9 @@ header a:hover {
         margin: 0.25em 0.25em;
     }
 }
+@media (max-width: 600px) {
+    header {
+        height: 120px;
+        padding-top: 0.5em;
+    }
+}
