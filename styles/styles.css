@@ -30,6 +30,12 @@ header a:hover {
     cursor: pointer;
     color: #007bff;
 }
+footer {
+    text-align: center;
+    background: #303030;
+    color:#fff;
+    padding: 0.5em;
+}
 @media (max-width: 768px) {
     header a {
         display: block;
