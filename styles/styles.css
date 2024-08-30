@@ -121,6 +121,38 @@ header a:hover {
     cursor: pointer;
     color: #007bff;
 }
+
+table, table a {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    color: #2b2b2b;
+}
+table tbody tr {
+    border-bottom: 1px solid #454d55;
+    transition: all 0.3s;
+}
+table tbody td {
+    padding: 12px 15px;
+}
+table tbody td a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+table tbody tr:hover {
+    background-color: #3c3f44;
+    color: #ffffff;
+}
+table tbody tr:hover td a {
+    color: #ffffff;
+}
+table tbody tr td:first-child {
+    font-weight: bold;
+}
+
 @media (max-width: 768px) {
     header a {
         display: block;
