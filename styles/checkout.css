@@ -5,6 +5,7 @@ button {
     font-size: 1.5em;
     width: 30px;
     cursor: pointer;
+    text-align: center;
 }
 .checkout-item {
     border-bottom: 1px dotted black;
