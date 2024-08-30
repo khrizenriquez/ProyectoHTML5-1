@@ -1,0 +1,25 @@
+img {
+    width: 300px;
+}
+button {
+    font-size: 1.5em;
+    width: 30px;
+    cursor: pointer;
+}
+.checkout-item {
+    border-bottom: 1px dotted black;
+    padding: 1em;
+}
+.main-content {
+    position: relative;
+    margin: 0 auto;
+    min-width: 300px;
+}
+#checkout-total {
+    position: absolute;
+    top: 0px;
+    font-size: 1.5em;
+}
+#checkout-items {
+    margin-top: 2em;
+}

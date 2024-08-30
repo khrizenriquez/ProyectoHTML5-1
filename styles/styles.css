@@ -1,14 +1,27 @@
 /* Establecer la fuente principal */
 body {
     font-family: 'Roboto', sans-serif;
-    margin: 0;
+    overflow-x: hidden;
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     min-height: 100vh;
-    text-align: center; /* Centrar texto en todo el cuerpo */
+    text-align: center;
+    background: linear-gradient(90deg, rgba(214, 212, 251, 1) 0%, rgba(244, 244, 255, 1) 35%, rgba(255, 255, 255, 1) 100%);
+    animation: animateBackground 5s ease infinite;
+    background-size: 200% 200%;
+    margin: 0;
+}
+@keyframes animateBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Estilo de la barra de navegación */
@@ -57,7 +70,6 @@ img {
     max-width: 50%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
 }
 
@@ -72,17 +84,21 @@ video {
 main {
     width: 80%;
     max-width: 800px;
-    margin: 20px 0;
+    margin: 20px auto;
 }
 
 footer {
-    margin-top: 20px;
+    margin-top: 2em;
+    background: #202124;
+    width: 100%;
+    color: white;
+    padding: 1em;
+    max-width: 100%;
 }
 
 header {
     background: url(../img/watch_banner.jpg);
-    background-size: contain;
-    background-position: center;
+    background-size: cover;
     height: 150px;
     margin-top: 0;
     text-align: center;
