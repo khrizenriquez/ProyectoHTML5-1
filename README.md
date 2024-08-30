@@ -1,7 +1,15 @@
 # Proyecto 1: HTML5/CSS3/WEB SQL
 
-## URL del proyecto 
+## 🚀 URL del proyecto 
 [ProyectoHTML5-1](https://khrizenriquez.github.io/ProyectoHTML5-1/)
+
+## 👨‍💻 Integrantes
+| Nombre | Carné |
+| ----------- | ----------- |
+| Christofer Enríquez | 0900 11 11145 |
+| Pablo Gutierrez | 0494 21 3461 |
+| Daniel Garcia | 0494 12 11376 |
+| Estuardo Martinez | 0494 11 13185 |
 
 ## Problema
 
