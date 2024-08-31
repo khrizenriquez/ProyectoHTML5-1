@@ -3,7 +3,7 @@
 ## 🚀 URL del sitio web
 [https://khrizenriquez.github.io/ProyectoHTML5-1/](https://khrizenriquez.github.io/ProyectoHTML5-1/)
 
-## Código base del proyecto
+## 🎸 Código base del proyecto
 [ProyectoHTML5-1](https://github.com/khrizenriquez/ProyectoHTML5-1?tab=readme-ov-file)
 
 ## 👨‍💻 Integrantes
